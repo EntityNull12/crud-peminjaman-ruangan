@@ -115,9 +115,10 @@
     <body>
         <div class="container-fluid mt-5">
             <h2 class="text-center mb-4">Form Usulan Kegiatan</h2>
+            <a href="tampilan-data.php" class="btn btn-primary">Data lebih lengkap</a>
 
             <!-- Form input usulan -->
-            <form id="kegiatanForm" method="POST" enctype="multipart/form-data">
+            <form id="kegiatanForm" method="POST" class="mt-4" enctype="multipart/form-data">
                 <input type="hidden" name="id_peminjaman" id="id_peminjaman">
                 <input type="hidden" name="file_lama" id="file_lama">
                 <div class="form-group">
@@ -152,10 +153,13 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Kirim Usulan</button>
+                <button type="submit" class="btn btn-success">Kirim Usulan</button>
                 <button type="reset" class="btn btn-danger">bersihkan</button>
+                
             </form>
-
+            <!-- ini ku sembunyikan, kalau mau hidupkan fungsi crudnya, hapus class "invisible" -->
+            <div class="invisible">
+      
             <!-- Daftar data usulan -->
             <h4 class="mt-5">Data Usulan Kegiatan:</h4>
             <table class="table mt-3">
@@ -200,7 +204,7 @@
                 </tbody>
             </table>
         </div>
-
+        </div>
         <script>
             $('button[type="reset"]').on('click', function() {
                 $('#surat_peminjaman').val(''); // Reset input file secara manual
